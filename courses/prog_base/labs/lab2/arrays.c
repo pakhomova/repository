@@ -90,7 +90,7 @@ for(i = 0; i < size; i++){
     res[i] = arr1[i] - arr2[i];
     sum = sum + res[i];
     }
-if(sum = 0){
+if(sum == 0){
     return 1;
     }
 return  0;
