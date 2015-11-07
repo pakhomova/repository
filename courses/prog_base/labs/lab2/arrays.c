@@ -88,8 +88,6 @@ int diff(int arr1[], int arr2[], int res[], int size){
 int i, sum = 0;
 for(i = 0; i < size; i++){
     res[i] = arr1[i] - arr2[i];
-    }
-for(i = 0; i<=size; i++){
     sum = sum + res[i];
     }
 if(sum = 0){
