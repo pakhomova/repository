@@ -1,31 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(void){
-int k = 0;
-printf("Please, enter your string: ");
-char * str1 = (char *) malloc(50);
-if (str1==NULL){
-    exit (1);
-    }
-char * str2 = (char *) malloc(7);
-if (str2==NULL){
-    exit (1);
-    }
-str2 = "eyuioa";
-char * res = (char *) malloc(50);
-if (res==NULL){
-    exit (1);
-    }
-scanf("%s", str1);
-res = strpbrk(str1, str2);
-while (res != NULL){
-    k++;
-    res = strpbrk (res+1,str2);
-    }
-printf("Number of vowel is %i.", k);
-free(str1);
-free(str2);
-free(res);
-return 0;
+	char * inputStr 	= NULL;
+	char * vowelCharPtr = NULL;
+	char * vowels 		= "eyuioaEYUIOA";
+	int  * count 		= NULL;
+	inputStr = (char *) malloc(50 * sizeof(char));
+	count 	 = (int  *) malloc( 1 * sizeof(int ));
+	if (NULL == inputStr || NULL == count){
+		printf("Alloc error");
+		exit(1);
+	}
+	*count = 0;
+	printf("Please, enter your string: ");
+	scanf("%s", inputStr);
+	vowelCharPtr = strpbrk(inputStr, vowels);
+	while (NULL != vowelCharPtr) {
+		(*count) ++;
+		vowelCharPtr = strpbrk(vowelCharPtr + 1, vowels);
+	}
+	printf("Number of vowels is %i.", *count);
+	free(inputStr);
+	free(count);
+	return 0;
 }
