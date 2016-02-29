@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1456775718 source:c:\users\user\desktop\код\практика\module\main.c
+	<stdio.h>
+	"text.h"
+
+1456774676 c:\users\user\desktop\код\практика\module\text.h
+
+1456774954 source:c:\users\user\desktop\код\практика\module\text.c
+	"text.h"
+	<string.h>
+
