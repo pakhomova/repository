@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1457810987 source:c:\users\user\desktop\код\практика\unittest\text.c
+	"text.h"
+	<string.h>
+
+1457810868 c:\users\user\desktop\код\практика\unittest\text.h
+
+1457811650 source:c:\users\user\desktop\код\практика\unittest\main.c
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	<stddef.h>
+	<setjmp.h>
+	<cmocka.h>
+	"text.h"
+
