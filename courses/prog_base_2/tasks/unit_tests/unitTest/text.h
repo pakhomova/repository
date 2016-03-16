@@ -15,7 +15,7 @@ char* text_getString (text_t *self, int place);
 
 void text_insert (text_t *self, int place, char *sentence, int format);
 void text_delete (text_t *self, int place);
-void text_writeFormat (text_t *self, int format);
+text_t *text_writeFormat (text_t *self, int format);
 
 #endif
 

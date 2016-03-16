@@ -1,5 +1,6 @@
 #include "text.h"
 #include <string.h>
+#include <stdlib.h>
 
 struct text_s {
     int count;
@@ -49,11 +50,15 @@ void text_delete (text_t *self, int place) {
     self->count--;
 }
 
-void text_writeFormat (text_t *self, int format) {
-    int i;
+text_t *text_writeFormat (text_t *self, int format) {
+    text_t *text = text_new();
+    int i, k = 0;
     for (i = 0; i < self->count; i++)
-        if (self->format[i] == format)
-            printf ("%s\n",self->sentence[i]);
+        if (self->format[i] == format) {
+            text_insert (text, k, self->sentence[i], self->format[i]);
+            k++;
+        }
+    return text;
 }
 
 

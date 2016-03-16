@@ -14,3 +14,20 @@
 	<cmocka.h>
 	"text.h"
 
+1458154866 source:c:\users\user\desktop\код\домашка\unittest\main.c
+	<stdlib.h>
+	<malloc.h>
+	<stdarg.h>
+	<string.h>
+	<stddef.h>
+	<setjmp.h>
+	<cmocka.h>
+	"text.h"
+
+1458154380 c:\users\user\desktop\код\домашка\unittest\text.h
+
+1458154423 source:c:\users\user\desktop\код\домашка\unittest\text.c
+	"text.h"
+	<string.h>
+	<stdlib.h>
+
