@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1459072549 source:c:\users\user\desktop\код\threads\main.c
+	<stdio.h>
+	<stdlib.h>
+	"randomizer.h"
+	"thread.h"
+	"positiveWriter.h"
+	"mutex.h"
+
+1459069927 source:c:\users\user\desktop\код\threads\mutex.c
+	<windows.h>
+	"mutex.h"
+
+1459069860 c:\users\user\desktop\код\threads\mutex.h
+
+1459072884 c:\users\user\desktop\код\threads\randomizer.h
+	"mutex.h"
+
+1459072868 source:c:\users\user\desktop\код\threads\randomizer.c
+	"randomizer.h"
+	"mutex.h"
+	<time.h>
+	<stdlib.h>
+
+1459073190 source:c:\users\user\desktop\код\threads\positivewriter.c
+	"mutex.h"
+	"positiveWriter.h"
+	<stdio.h>
+	<windows.h>
+
+1459072795 c:\users\user\desktop\код\threads\positivewriter.h
+	"randomizer.h"
+
+1459073029 c:\users\user\desktop\код\threads\thread.h
+
+1459073156 source:c:\users\user\desktop\код\threads\thread.c
+	<windows.h>
+	"thread.h"
+
