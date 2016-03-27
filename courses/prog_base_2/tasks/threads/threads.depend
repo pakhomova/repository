@@ -37,3 +37,43 @@
 	<windows.h>
 	"thread.h"
 
+1459079609 source:c:\github\repository\courses\prog_base_2\tasks\threads\main.c
+	<stdio.h>
+	<stdlib.h>
+	"randomizer.h"
+	"thread.h"
+	"positiveWriter.h"
+	"mutex.h"
+
+1459079626 c:\github\repository\courses\prog_base_2\tasks\threads\randomizer.h
+	"mutex.h"
+	"thread.h"
+
+1459069860 c:\github\repository\courses\prog_base_2\tasks\threads\mutex.h
+
+1459073029 c:\github\repository\courses\prog_base_2\tasks\threads\thread.h
+
+1459079463 c:\github\repository\courses\prog_base_2\tasks\threads\positivewriter.h
+	"randomizer.h"
+	"thread.h"
+
+1459069927 source:c:\github\repository\courses\prog_base_2\tasks\threads\mutex.c
+	<windows.h>
+	"mutex.h"
+
+1459079547 source:c:\github\repository\courses\prog_base_2\tasks\threads\randomizer.c
+	"randomizer.h"
+	"mutex.h"
+	<time.h>
+	<stdlib.h>
+
+1459073156 source:c:\github\repository\courses\prog_base_2\tasks\threads\thread.c
+	<windows.h>
+	"thread.h"
+
+1459079381 source:c:\github\repository\courses\prog_base_2\tasks\threads\positivewriter.c
+	"mutex.h"
+	"positiveWriter.h"
+	<stdio.h>
+	<windows.h>
+

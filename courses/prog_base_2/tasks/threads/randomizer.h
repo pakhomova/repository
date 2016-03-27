@@ -2,12 +2,13 @@
 #define RANDOMIZER_H_INCLUDED
 
 #include "mutex.h"
+#include "thread.h"
 
 typedef struct shared_s {
     int *num;
     mutex_t *mu;
 } shared_t;
 
-void *randomizer_random (void *args);
+thread_t *randomizer_create(shared_t *data);
 
 #endif

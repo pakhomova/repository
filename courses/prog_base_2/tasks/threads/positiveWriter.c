@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <windows.h>
 
-void *positiveWriter_write(void *argss) {
+static void *positiveWriter_write(void *argss) {
     shared_t *args = (shared_t *)argss;
     while (1) {
         mutex_lock(args->mu);
@@ -14,4 +14,9 @@ void *positiveWriter_write(void *argss) {
         Sleep(3);
     }
     return NULL;
+}
+
+thread_t *positiveWriter_create(shared_t *data) {
+    thread_t * thread = thread_create_args(positiveWriter_write, data);
+    return thread;
 }

@@ -3,7 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-void *randomizer_random (void *argss) {
+static void *randomizer_random (void *argss) {
     shared_t *args = (shared_t *)argss;
     srand(time(NULL));
     while (1) {
@@ -12,4 +12,9 @@ void *randomizer_random (void *argss) {
         mutex_unlock(args->mu);
     }
     return NULL;
+}
+
+thread_t *randomizer_create(shared_t *data) {
+    thread_t * thread = thread_create_args(randomizer_random, data);
+    return thread;
 }
