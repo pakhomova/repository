@@ -1,7 +1,12 @@
 #include "randomizer.h"
 #include "mutex.h"
+#include "thread.h"
 #include <time.h>
 #include <stdlib.h>
+
+struct randomizer_s {
+    thread_t *thread;
+};
 
 static void *randomizer_random (void *argss) {
     shared_t *args = (shared_t *)argss;
@@ -14,7 +19,13 @@ static void *randomizer_random (void *argss) {
     return NULL;
 }
 
-thread_t *randomizer_create(shared_t *data) {
-    thread_t * thread = thread_create_args(randomizer_random, data);
-    return thread;
+randomizer_t *randomizer_costructor (shared_t *data) {
+    randomizer_t *randomizer = malloc(sizeof(randomizer_t));
+    randomizer->thread = thread_create_args(randomizer_random, data);
+    return randomizer;
+}
+
+void randomizer_destructor (randomizer_t *randomizer) {
+    thread_free(randomizer->thread);
+    free (randomizer);
 }

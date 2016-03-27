@@ -11,16 +11,20 @@ int main()
     int x = 0;
     sharedData.num = &x;
     sharedData.mu = mutex_new();
-    thread_t * radomizer1 = randomizer_create(&sharedData);
-    thread_t * radomizer2 = randomizer_create(&sharedData);
-    thread_t * radomizer3 = randomizer_create(&sharedData);
-    thread_t * positiveWriter = positiveWriter_create(&sharedData);
 
-    thread_join(positiveWriter);
-    thread_free(radomizer1);
-    thread_free(radomizer2);
-    thread_free(radomizer3);
-    thread_free(positiveWriter);
+    randomizer_t *randomizer1 = randomizer_costructor(&sharedData);
+    randomizer_t *randomizer2 = randomizer_costructor(&sharedData);
+    randomizer_t *randomizer3 = randomizer_costructor(&sharedData);
+
+    positiveWriter_t *positiveWriter = positiveWriter_costructor(&sharedData);
+
+    positiveWriter_join (positiveWriter);
+
+    randomizer_destructor (randomizer1);
+    randomizer_destructor (randomizer2);
+    randomizer_destructor (randomizer3);
+
+    positiveWriter_destructor (positiveWriter);
 
     mutex_free(sharedData.mu);
     return 0;

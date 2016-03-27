@@ -4,7 +4,11 @@
 #include "randomizer.h"
 #include "thread.h"
 
-thread_t *positiveWriter_create(shared_t *data);
+typedef struct positiveWriter_s positiveWriter_t;
+
+positiveWriter_t *positiveWriter_costructor (shared_t *data);
+void positiveWriter_destructor (positiveWriter_t *positiveWriter);
+void positiveWriter_join (positiveWriter_t *positiveWriter);
 
 #endif
 
