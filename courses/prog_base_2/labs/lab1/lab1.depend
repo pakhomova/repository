@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1460133268 source:c:\users\user\desktop\code\lab1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<stdarg.h>
+	<stddef.h>
+	<setjmp.h>
+	<cmocka.h>
+	"game.h"
+	"gamer.h"
+	"gamer_tests.h"
+
+1460134606 source:c:\users\user\desktop\code\lab1\gamer.c
+	"gamer.h"
+	<stdlib.h>
+	<stdio.h>
+
+1460135074 source:c:\users\user\desktop\code\lab1\game.c
+	"game.h"
+	<stdlib.h>
+	<stdio.h>
+
+1460135104 c:\users\user\desktop\code\lab1\game.h
+
+1460131616 c:\users\user\desktop\code\lab1\gamer.h
+	"game.h"
+
+1460132747 source:c:\users\user\desktop\code\lab1\gamer_tests.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<stdarg.h>
+	<stddef.h>
+	<setjmp.h>
+	<cmocka.h>
+	"gamer.h"
+	"game.h"
+
+1460133070 c:\users\user\desktop\code\lab1\gamer_tests.h
+
+1460135848 source:c:\users\user\desktop\code\lab1\game_tests.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<stdarg.h>
+	<stddef.h>
+	<setjmp.h>
+	<cmocka.h>
+	"game.h"
+

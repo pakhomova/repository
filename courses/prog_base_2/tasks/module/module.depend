@@ -9,3 +9,13 @@
 	"text.h"
 	<string.h>
 
+1456779368 source:c:\github\repository\courses\prog_base_2\tasks\module\main.c
+	<stdio.h>
+	"text.h"
+
+1456778276 c:\github\repository\courses\prog_base_2\tasks\module\text.h
+
+1456778554 source:c:\github\repository\courses\prog_base_2\tasks\module\text.c
+	"text.h"
+	<string.h>
+
