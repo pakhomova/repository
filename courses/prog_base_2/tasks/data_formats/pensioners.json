@@ -1,0 +1,35 @@
+[
+    {
+        "name" : "Volodymyr",
+        "surname" : "Tarasenko",
+        "birthdate" : "1932-03-09",
+        "year" : "2009",
+        "pension" : "1324.6",
+        "bloodType" : {
+        "factor" : "positive",
+        "number" : "1"
+        }
+    },
+    {
+        "name" : "Tatiana",
+        "surname" : "Tarasenko",
+        "birthdate" : "1933-04-29",
+        "year" : "2010",
+        "pension" : "1500.6",
+        "bloodType" : {
+        "factor" : "positive",
+        "number" : "2"
+        }
+    },
+    {
+        "name" : "Anna",
+        "surname" : "Petrova",
+        "birthdate" : "1950-12-12",
+        "year" : "2015",
+        "pension" : "1300.3",
+        "bloodType" : {
+        "factor" : "negative",
+        "number" : "4"
+        }
+    }
+]

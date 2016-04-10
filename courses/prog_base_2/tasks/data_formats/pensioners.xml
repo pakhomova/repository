@@ -1,0 +1,36 @@
+
+<pensioners>
+    <pensioner>
+        <name>Volodymyr</name>
+        <surname>Tarasenko</surname>
+        <birthdate>1932-03-09</birthdate>
+        <year>2009</year>
+        <pension>1324.6</pension>
+        <bloodType factor = "positive">
+            <number>1</number>
+        </bloodType>
+    </pensioner>
+
+    <pensioner>
+        <name>Tatiana</name>
+        <surname>Tarasenko</surname>
+        <birthdate>1933-04-29</birthdate>
+        <year>2010</year>
+        <pension>1500.6</pension>
+        <bloodType factor = "positive">
+            <number>2</number>
+        </bloodType>
+    </pensioner>
+
+    <pensioner>
+        <name>Anna</name>
+        <surname>Petrova</surname>
+        <birthdate>1950-12-12</birthdate>
+        <year>2015</year>
+        <pension>1300.3</pension>
+        <bloodType factor = "negative">
+            <number>4</number>
+        </bloodType>
+    </pensioner>
+</pensioners>
+
