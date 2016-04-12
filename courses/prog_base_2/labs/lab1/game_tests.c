@@ -22,12 +22,37 @@ static void add_emptyQueueCommandOneFirstNumberOfPlayer_firstPlayerAddedCommandO
     game_free(game);
 }
 
-void game_runTests(void){
+static void add_NonexistentGamerName_ErrorCodeTwo(void **state) {
+    game_t * game = game_newGame();
+    assert_int_equal(game_add (game, 1, 10), 2);
+    game_free(game);
+}
+
+static void add_NonexistentCommand_ErrorCodeOne(void **state) {
+    game_t * game = game_newGame();
+    assert_int_equal(game_add (game, 3757, 1), 1);
+    game_free(game);
+}
+
+static void add_OwerflowQueue_ErrorCodeThree(void **state) {
+    game_t * game = game_newGame();
+    int i;
+    for(i = 0; i < N; i++){
+        game_add (game, 1, 1);
+    }
+    assert_int_equal(game_add (game, 1, 1), 3);
+    game_free(game);
+}
+
+int game_runTests(void){
 
 	const struct CMUnitTest tests[] =
 	{
 		cmocka_unit_test(newGame_void_zeroQueueEnd),
-		cmocka_unit_test(add_emptyQueueCommandOneFirstNumberOfPlayer_firstPlayerAddedCommandOneInQueueOneQueueEnd)
+		cmocka_unit_test(add_emptyQueueCommandOneFirstNumberOfPlayer_firstPlayerAddedCommandOneInQueueOneQueueEnd),
+		cmocka_unit_test(add_NonexistentGamerName_ErrorCodeTwo),
+		cmocka_unit_test(add_NonexistentCommand_ErrorCodeOne),
+		cmocka_unit_test(add_OwerflowQueue_ErrorCodeThree)
 	};
 	return cmocka_run_group_tests(tests, NULL, NULL);
 }

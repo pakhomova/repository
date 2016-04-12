@@ -6,9 +6,10 @@
 typedef struct gamer_s gamer_t;
 
 gamer_t *gamer_newGamer (int number);
-void gamer_free (gamer_t *self);
+ErrorCode gamer_free (gamer_t *self);
+const char *gamer_errstr (ErrorCode errcode);
 
-void gamer_play (game_t *game, gamer_t *self, int command);
+ErrorCode gamer_play (gamer_t *self, game_t *game, int command);
 int gamer_getNumber (gamer_t *self);
 
 #endif

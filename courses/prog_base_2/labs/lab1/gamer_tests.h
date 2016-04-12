@@ -1,1 +1,1 @@
-void gamer_runTests(void);
+int gamer_runTests(void);

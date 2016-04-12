@@ -1,4 +1,6 @@
 #include <conio.h>
+#include <stdio.h>
+#include <windows.h>
 #include "game.h"
 #include "gamer.h"
 #include "gamer_tests.h"
@@ -12,6 +14,8 @@ int main() {
     gamer_t *gamer2 = gamer_newGamer(2);
 
     char c;
+    ErrorCode err;
+
     while (c = getch()) {
         int command = 0, number = 0;
         if (c == '0') break;
@@ -49,14 +53,19 @@ int main() {
                 number = 2;
                 break;
         }
-        if (number == 1) gamer_play (game, gamer1, command);
-            else if (number == 2) gamer_play (game, gamer2, command);
+        if (number == 1) err = gamer_play (gamer1, game, command);
+            else if (number == 2) err = gamer_play (gamer2, game, command);
+        if (err != RESULT_OK) printf (gamer_errstr(err));
         system ("CLS");
-        game_show (game);
+        err = game_show (game);
+        if (err != RESULT_OK) printf (game_errstr(err));
     }
 
-    gamer_free (gamer1);
-    gamer_free (gamer2);
-    game_free (game);
+    err = gamer_free (gamer1);
+    if (err != RESULT_OK) printf (gamer_errstr(err));
+    err = gamer_free (gamer2);
+    if (err != RESULT_OK) printf (gamer_errstr(err));
+    err = game_free (game);
+    if (err != RESULT_OK) printf (game_errstr(err));
     return 0;
 }
