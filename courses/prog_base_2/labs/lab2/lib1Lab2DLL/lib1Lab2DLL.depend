@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1461407219 source:c:\users\user\desktop\code\lab2op\lib1lab2dll\main.cpp
+	"main.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1461402831 c:\users\user\desktop\code\lab2op\lib1lab2dll\main.h
+	<windows.h>
+	"stack.h"
+
+1461408313 c:\users\user\desktop\code\lab2op\libstaticlab2\stack.h
+

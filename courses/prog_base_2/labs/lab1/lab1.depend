@@ -48,3 +48,52 @@
 
 1460468436 c:\users\user\desktop\code\lab1\game_tests.h
 
+1460471157 source:c:\github\repository\courses\prog_base_2\labs\lab1\game.c
+	"game.h"
+	<stdlib.h>
+	<stdio.h>
+
+1460468057 c:\github\repository\courses\prog_base_2\labs\lab1\game.h
+
+1460471159 source:c:\github\repository\courses\prog_base_2\labs\lab1\game_tests.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<stdarg.h>
+	<stddef.h>
+	<setjmp.h>
+	<cmocka.h>
+	"game.h"
+
+1460468017 source:c:\github\repository\courses\prog_base_2\labs\lab1\gamer.c
+	"gamer.h"
+	<stdlib.h>
+	<stdio.h>
+
+1460468038 c:\github\repository\courses\prog_base_2\labs\lab1\gamer.h
+	"game.h"
+
+1460470104 source:c:\github\repository\courses\prog_base_2\labs\lab1\gamer_tests.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<stdarg.h>
+	<stddef.h>
+	<setjmp.h>
+	<cmocka.h>
+	"gamer.h"
+	"game.h"
+
+1460468483 source:c:\github\repository\courses\prog_base_2\labs\lab1\main.c
+	<conio.h>
+	<stdio.h>
+	<windows.h>
+	"game.h"
+	"gamer.h"
+	"gamer_tests.h"
+	"game_tests.h"
+
+1460468428 c:\github\repository\courses\prog_base_2\labs\lab1\gamer_tests.h
+
+1460468436 c:\github\repository\courses\prog_base_2\labs\lab1\game_tests.h
+
