@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1461786881 source:c:\users\user\desktop\code\домашка\database\database\main.c
+	<stdio.h>
+	<stdlib.h>
+	"db_manager.h"
+	"pensioner.h"
+
+1461786251 source:c:\users\user\desktop\code\домашка\database\database\db_manager.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<sqlite3.h>
+	"db_manager.h"
+	"pensioner.h"
+
+1461697777 source:c:\users\user\desktop\code\домашка\database\database\pensioner.c
+	<stdlib.h>
+	<stdio.h>
+	"pensioner.h"
+
+1461697788 c:\users\user\desktop\code\домашка\database\database\pensioner.h
+
+1461786971 c:\users\user\desktop\code\домашка\database\database\db_manager.h
+	<sqlite3.h>
+	"pensioner.h"
+
