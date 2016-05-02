@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1462149666 source:d:\server\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<strings.h>
+	"pensioner.h"
+	"socket.h"
+	"http.h"
+
+1462141055 d:\server\pensioner.h
+	<time.h>
+
+1462138602 source:d:\server\pensioner.c
+	<stdlib.h>
+	<stdio.h>
+	<strings.h>
+	<time.h>
+	<libxml/tree.h>
+	"pensioner.h"
+
+1462139974 d:\server\socket.h
+
+1462140211 source:d:\server\socket.c
+	<winsock2.h>
+	"socket.h"
+
+1462140828 d:\server\http.h
+	"socket.h"
+
+1462140806 source:d:\server\http.c
+	<stddef.h>
+	<strings.h>
+	<stdlib.h>
+	<stdio.h>
+	"http.h"
+

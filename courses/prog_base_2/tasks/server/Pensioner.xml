@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pensioners>
+   <pensioner name="Zhenya" surname="Pakhomova">
+      <birthDate>1998-19-03</birthDate>
+      <pension>99.99</pension>
+      <experience>10</experience>
+   </pensioner>
+   <pensioner name="Ivan" surname="Ivanov">
+      <birthDate>1965-22-08</birthDate>
+      <pension>900.87</pension>
+      <experience>25</experience>
+   </pensioner>
+   <pensioner name="Petro" surname="Petrov">
+      <birthDate>1986-15-01</birthDate>
+      <pension>75.98</pension>
+      <experience>15</experience>
+   </pensioner>
+</pensioners>
