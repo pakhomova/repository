@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1463334572 source:c:\users\user\desktop\code\домашка\windows\windows\main.c
+	<windows.h>
+	<CommCtrl.h>
+	"pensioner.h"
+
+1463333816 source:c:\users\user\desktop\code\домашка\windows\windows\pensioner.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pensioner.h"
+
+1463333610 c:\users\user\desktop\code\домашка\windows\windows\pensioner.h
+
