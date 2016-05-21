@@ -7,8 +7,8 @@
 #include "socket.h"
 #include "http.h"
 
-#define COUNT 100
-#define BUFSIZE 100000
+#define COUNT 20
+#define BUFSIZE 200000
 #define XML_FILEPATH "Pensioner.xml"
 
 int main () {

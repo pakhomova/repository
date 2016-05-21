@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1463755532 source:c:\users\Ромашка\documents\callbacks\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"stack.h"
+
+1463755496 source:c:\users\Ромашка\documents\callbacks\stack.c
+	<stdlib.h>
+	<stdio.h>
+	"stack.h"
+
+1463753012 c:\users\Ромашка\documents\callbacks\stack.h
+
+1463823275 source:c:\github\repository\courses\prog_base_2\labs\lab3\callbacks\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdarg.h>
+	<string.h>
+	<stddef.h>
+	<setjmp.h>
+	<cmocka.h>
+	"stack.h"
+
+1463818900 c:\github\repository\courses\prog_base_2\labs\lab3\callbacks\stack.h
+
+1463819574 source:c:\github\repository\courses\prog_base_2\labs\lab3\callbacks\stack.c
+	<stdlib.h>
+	<stdio.h>
+	"stack.h"
+

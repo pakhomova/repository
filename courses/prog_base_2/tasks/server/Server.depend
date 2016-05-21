@@ -35,3 +35,39 @@
 	<stdio.h>
 	"http.h"
 
+1462140806 source:c:\github\repository\courses\prog_base_2\tasks\server\http.c
+	<stddef.h>
+	<strings.h>
+	<stdlib.h>
+	<stdio.h>
+	"http.h"
+
+1462140828 c:\github\repository\courses\prog_base_2\tasks\server\http.h
+	"socket.h"
+
+1462139974 c:\github\repository\courses\prog_base_2\tasks\server\socket.h
+
+1463153442 source:c:\github\repository\courses\prog_base_2\tasks\server\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<strings.h>
+	"pensioner.h"
+	"socket.h"
+	"http.h"
+
+1462141055 c:\github\repository\courses\prog_base_2\tasks\server\pensioner.h
+	<time.h>
+
+1462138602 source:c:\github\repository\courses\prog_base_2\tasks\server\pensioner.c
+	<stdlib.h>
+	<stdio.h>
+	<strings.h>
+	<time.h>
+	<libxml/tree.h>
+	"pensioner.h"
+
+1462140211 source:c:\github\repository\courses\prog_base_2\tasks\server\socket.c
+	<winsock2.h>
+	"socket.h"
+

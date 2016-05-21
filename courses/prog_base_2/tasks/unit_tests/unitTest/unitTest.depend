@@ -31,3 +31,20 @@
 	<string.h>
 	<stdlib.h>
 
+1458158466 source:c:\github\repository\courses\prog_base_2\tasks\unit_tests\unittest\main.c
+	<stdlib.h>
+	<malloc.h>
+	<stdarg.h>
+	<string.h>
+	<stddef.h>
+	<setjmp.h>
+	<cmocka.h>
+	"text.h"
+
+1458157980 c:\github\repository\courses\prog_base_2\tasks\unit_tests\unittest\text.h
+
+1458158023 source:c:\github\repository\courses\prog_base_2\tasks\unit_tests\unittest\text.c
+	"text.h"
+	<string.h>
+	<stdlib.h>
+
