@@ -30,9 +30,9 @@ int stack_cb2 (stack_t *stack);    //коллбек опустошения
 //подписчики
 
 void stack_subsEventOverFlow (stack_t *self, stack_t *observer, event1_fn callback); //функция, которая подписывает
-void stack_subsEventUnderFlow (stack_t *self, stack_t *observer, event2_fn callback); //добавляет коллбек в мультиподписку
+void stack_subsEventUnderFlow (stack_t *self, stack_t *observer, event2_fn callback);
 
-void stack_addOver (stack_t *self, stack_event ev);
+void stack_addOver (stack_t *self, stack_event ev);  //добавляет коллбек в мультиподписку
 void stack_addUnder (stack_t *self, stack_event ev);
 
 #endif

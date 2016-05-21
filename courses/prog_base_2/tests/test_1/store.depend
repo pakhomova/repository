@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1446671346 source:c:\users\Ромашка\documents\store\main.c
+
+1463820790 source:c:\users\Ромашка\documents\store\goods.c
+	"goods.h"
+	"string.h"
+	"stdlib.h"
+
+1463820818 c:\users\Ромашка\documents\store\goods.h
+
+1463820902 source:c:\users\Ромашка\documents\store\supply.c
+	"supply.h"
+	"string.h"
+	"stdlib.h"
+
+1463820961 c:\users\Ромашка\documents\store\supply.h
+	"goods.h"
+
+1463821375 source:c:\users\Ромашка\documents\store\supplylist.c
+	"supplyList.h"
+	"stdlib.h"
+
+1463821729 c:\users\Ромашка\documents\store\supplylist.h
+	"supply.h"
+
+1463822235 source:c:\users\Ромашка\documents\store\store.c
+	"store.h"
+	"stdlib.h"
+
+1463822259 c:\users\Ромашка\documents\store\store.h
+	"goods.h"
+
