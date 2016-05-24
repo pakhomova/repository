@@ -1,0 +1,99 @@
+# depslib dependency file v1.0
+1464092110 source:c:\users\Ромашка\documents\laba_04\main.c
+	"http_server.h"
+	"pensioners.h"
+	"web.h"
+
+1464041905 source:c:\users\Ромашка\documents\laba_04\cjson.c
+	<string.h>
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<float.h>
+	<limits.h>
+	<ctype.h>
+	"cJSON.h"
+
+1464041933 c:\users\Ромашка\documents\laba_04\cjson.h
+
+1464090939 c:\users\Ромашка\documents\laba_04\pensioners.h
+	<time.h>
+
+1464090919 source:c:\users\Ромашка\documents\laba_04\pensioners.c
+	"pensioners.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1464092322 source:c:\users\Ромашка\documents\laba_04\http_server.c
+	"http_server.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	<winsock2.h>
+	"web.h"
+
+1464092823 source:c:\users\Ромашка\documents\laba_04\web.c
+	"web.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"cJSON.h"
+
+1464090952 c:\users\Ромашка\documents\laba_04\web.h
+	"pensioners.h"
+	"http_server.h"
+
+1464091580 c:\users\Ромашка\documents\laba_04\http_server.h
+	"pensioners.h"
+
+1464041905 source:c:\users\user\desktop\code\laba_04\cjson.c
+	<string.h>
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<float.h>
+	<limits.h>
+	<ctype.h>
+	"cJSON.h"
+
+1464041933 c:\users\user\desktop\code\laba_04\cjson.h
+
+1464114236 source:c:\users\user\desktop\code\laba_04\http_server.c
+	"http_server.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	<winsock2.h>
+	"web.h"
+
+1464105616 c:\users\user\desktop\code\laba_04\http_server.h
+	"pensioners.h"
+
+1464106909 c:\users\user\desktop\code\laba_04\pensioners.h
+	<time.h>
+
+1464111326 c:\users\user\desktop\code\laba_04\web.h
+	"pensioners.h"
+	"http_server.h"
+
+1464114215 source:c:\users\user\desktop\code\laba_04\main.c
+	"http_server.h"
+	"pensioners.h"
+	"web.h"
+
+1464107235 source:c:\users\user\desktop\code\laba_04\pensioners.c
+	"pensioners.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1464111310 source:c:\users\user\desktop\code\laba_04\web.c
+	"web.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"cJSON.h"
+
