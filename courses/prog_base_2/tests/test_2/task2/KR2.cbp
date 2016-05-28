@@ -31,9 +31,22 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="KR2.depend" />
+		<Unit filename="cJSON.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cJSON.h" />
+		<Unit filename="http_server.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="http_server.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="web.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="web.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
