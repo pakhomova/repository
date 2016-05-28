@@ -37,3 +37,41 @@
 	<winsock2.h>
 	"cJSON.h"
 
+1464422632 source:c:\github\repository\courses\prog_base_2\tests\test_2\task2\cjson.c
+	<string.h>
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<float.h>
+	<limits.h>
+	<ctype.h>
+	"cJSON.h"
+
+1464422640 c:\github\repository\courses\prog_base_2\tests\test_2\task2\cjson.h
+
+1464424363 source:c:\github\repository\courses\prog_base_2\tests\test_2\task2\http_server.c
+	"http_server.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	<winsock2.h>
+	"web.h"
+
+1464424277 c:\github\repository\courses\prog_base_2\tests\test_2\task2\http_server.h
+
+1464424288 c:\github\repository\courses\prog_base_2\tests\test_2\task2\web.h
+	"http_server.h"
+
+1464423991 source:c:\github\repository\courses\prog_base_2\tests\test_2\task2\main.c
+	"http_server.h"
+	"web.h"
+
+1464426079 source:c:\github\repository\courses\prog_base_2\tests\test_2\task2\web.c
+	"web.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<winsock2.h>
+	"cJSON.h"
+
