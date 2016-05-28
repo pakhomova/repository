@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <winsock2.h>
 #include "cJSON.h"
+#include "../../../tasks/database/database/db_manager.h"
+#include "../../../tasks/database/database/pensioner.h"
 
 #define KEY_LEN 64
 #define VALUE_LEN 64
@@ -67,6 +69,16 @@ static void url_params_delete (url_params_t *url_params) {
 }
 
 int callback (const char *url, const char *request, char *response) {
+
+    if (strcmp(url, "/test") == 0) {
+        cJSON *myJson = cJSON_CreateObject();
+
+        cJSON_AddStringToObject (myJson, "result", "ok");
+
+        strcpy (response, cJSON_Print(myJson));
+        cJSON_Delete (myJson);
+        return 1;
+    } else
     if (strcmp(url, "/info") == 0) {
         cJSON *myJson = cJSON_CreateObject();
 
@@ -104,7 +116,48 @@ int callback (const char *url, const char *request, char *response) {
         closesocket(mySocket);
 
         return 1;
+    } else
+    if (strcmp(url, "/database-bytes") == 0) {
+        cJSON *myJson = cJSON_CreateObject();
+
+        const char *dbFile = "../../../tasks/database/database/database.db";
+        db_t *db = db_new(dbFile);
+
+        int db_size = db_getPensionersSize(db);
+
+        cJSON_AddNumberToObject (myJson, "database-bytes", db_size);
+
+        strcpy (response, cJSON_Print(myJson));
+        cJSON_Delete (myJson);
+        return 1;
+    } else
+    if (strcmp(url, "/database") == 0) {
+        cJSON *myJson = cJSON_CreateArray();
+
+        const char *dbFile = "../../../tasks/database/database/database.db";
+        db_t *db = db_new(dbFile);
+
+        pensioner_t *pensioners = malloc (10 * sizeof(pensioner_t));
+
+        int count = db_getPensioners(db, pensioners);
+
+        for (int i = 0; i < count; i++) {
+            cJSON *myObject = cJSON_CreateObject();
+            cJSON_AddNumberToObject (myObject, "id", pensioners[i].id);
+            cJSON_AddStringToObject (myObject, "name", pensioners[i].name);
+            cJSON_AddStringToObject (myObject, "surname", pensioners[i].surname);
+            cJSON_AddStringToObject (myObject, "birthDate", pensioners[i].birthDate);
+            cJSON_AddNumberToObject (myObject, "pension", pensioners[i].pension);
+            cJSON_AddNumberToObject (myObject, "experience", pensioners[i].experience);
+            cJSON_AddItemToArray(myJson,myObject);
+        }
+
+        strcpy (response, cJSON_Print(myJson));
+        cJSON_Delete (myJson);
+        return 1;
     }
+
+
     return 0;
 }
 

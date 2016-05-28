@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#include <sqlite3.h>
+#include "sqlite3.h"
 
 #include "db_manager.h"
 #include "pensioner.h"
@@ -128,6 +128,54 @@ static void _fillPensioner (sqlite3_stmt *stmt, pensioner_t *pe) {
     strcpy (pe->birthDate, (const char *)birthDate);
     pe->pension = pension;
     pe->experience = experience;
+}
+
+int db_getPensionersSize(db_t *self) {
+    sqlite3_stmt * stmt = NULL;
+    const char * sqlQuery = "SELECT * FROM Pensioner;";
+    sqlite3_prepare_v2 (self->db, sqlQuery, strlen(sqlQuery), &stmt, 0);
+    int sizeSum = 0;
+    while (1) {
+        int rc = sqlite3_step(stmt);
+        if (rc == SQLITE_ERROR) {
+            printf("Can't select Pensioners\n");
+            exit(1);
+        } else if (rc == SQLITE_DONE) {
+            break;
+        } else {
+            //4     int id = sqlite3_column_int (stmt, 0);
+            int name_len = strlen(sqlite3_column_text(stmt, 1));
+            int surname_len = strlen(sqlite3_column_text(stmt, 2));
+            int birthday_len = strlen(sqlite3_column_text(stmt, 3));
+            //16    double pension = sqlite3_column_double(stmt, 4);
+            //4     int experience = sqlite3_column_int(stmt, 5);
+
+            sizeSum += 4 + 4 + 16 + name_len + surname_len + birthday_len;
+        }
+    }
+    sqlite3_finalize(stmt);
+    return sizeSum;
+}
+
+int db_getPensioners(db_t *self, pensioner_t *arr) {
+    sqlite3_stmt * stmt = NULL;
+    const char * sqlQuery = "SELECT * FROM Pensioner;";
+    sqlite3_prepare_v2 (self->db, sqlQuery, strlen(sqlQuery), &stmt, 0);
+    int count = 0;
+    while (1) {
+        int rc = sqlite3_step(stmt);
+        if (rc == SQLITE_ERROR) {
+            printf("Can't select Pensioners\n");
+            exit(1);
+        } else if (rc == SQLITE_DONE) {
+            break;
+        } else {
+            _fillPensioner(stmt, &arr[count]);
+            count++;
+        }
+    }
+    sqlite3_finalize(stmt);
+    return count;
 }
 
 int db_getPensionersTask(db_t *self, int K, int P, pensioner_t *arr) {

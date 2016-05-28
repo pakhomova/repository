@@ -24,9 +24,12 @@ int main(void) {
     id4 = db_insertPensioner (db, &pensioner4);
     id5 = db_insertPensioner (db, &pensioner5);
 
-    pensioner_t *pensioners = malloc (PENUMBER * sizeof(pensioner_t));
+    pensioner_t *pensioners = malloc (10 * sizeof(pensioner_t));
 
-    int count = db_getPensionersTask(db, 18, 5000, pensioners);
+    int count = db_getPensioners(db, pensioners);
+    //int count = db_getPensioners(db, pensioners);
+
+    puts("TEST!\n");
 
     pensioner_printList(pensioners, count);
 

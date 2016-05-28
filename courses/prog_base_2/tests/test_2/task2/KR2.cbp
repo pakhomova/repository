@@ -31,6 +31,19 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../../../tasks/database/database/database.db" />
+		<Unit filename="../../../tasks/database/database/db_manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../tasks/database/database/db_manager.h" />
+		<Unit filename="../../../tasks/database/database/pensioner.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../tasks/database/database/pensioner.h" />
+		<Unit filename="../../../tasks/database/database/sqlite3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../tasks/database/database/sqlite3.h" />
 		<Unit filename="KR2.depend" />
 		<Unit filename="cJSON.c">
 			<Option compilerVar="CC" />

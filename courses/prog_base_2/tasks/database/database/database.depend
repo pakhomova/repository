@@ -24,3 +24,10 @@
 	<sqlite3.h>
 	"pensioner.h"
 
+1461697777 source:c:\github\repository\courses\prog_base_2\tasks\database\database\pensioner.c
+	<stdlib.h>
+	<stdio.h>
+	"pensioner.h"
+
+1461697788 c:\github\repository\courses\prog_base_2\tasks\database\database\pensioner.h
+
