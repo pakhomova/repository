@@ -12,11 +12,7 @@
 #define CONTLENSTR_LEN 64
 #define PORT 5000
 
-struct http_server_s {
-    pensioners_t *pensioners;
-};
-
-static int checkHttpRequestCompleteness (const char *request, int size) {//проверяет, полный ли хттп запрос
+static int checkHttpRequestCompleteness (const char *request, int size) {
     char buffer[BUFFER_LENGTH];
     memcpy (buffer, request, size);
     buffer[size] = '\0';
@@ -35,34 +31,26 @@ static int checkHttpRequestCompleteness (const char *request, int size) {//прове
     int contentLength = atoi(contentLengthPos + strlen("content-length: "));
     char *bodyStartPos = headersEndPos + strlen("\r\n\r\n");
     int contentRealLength = size - (bodyStartPos - buffer);
-    if (contentRealLength >= contentLength)//проверяет, совпадает ли реальная длинна запроса с заданой
+    if (contentRealLength >= contentLength)//РїСЂРѕРІРµСЂСЏРµС‚, СЃРѕРІРїР°РґР°РµС‚ Р»Рё СЂРµР°Р»СЊРЅР°СЏ РґР»РёРЅРЅР° Р·Р°РїСЂРѕСЃР° СЃ Р·Р°РґР°РЅРѕР№
         return 1;
     return 0;
 }
 
-static void parseHttpRequest(const char *request, http_method_t *http_method, char *url, char *message) {//парсим хттп запрос
-    if (http_method) {//определяем какой метод и сохраняем его
-        *http_method = http_method_get;
-        if (strncmp(request, "POST", strlen("POST")) == 0)
-            *http_method = http_method_post;
-        else if (strncmp(request, "DELETE", strlen("DELETE")) == 0)
-            *http_method = http_method_delete;
-    }
-
-    if (url) {//выделяем юрл и сохраняем ее
+static void parseHttpRequest(const char *request, char *url, char *message) {//РїР°СЂСЃРёРј С…С‚С‚Рї Р·Р°РїСЂРѕСЃ
+    if (url) {//РІС‹РґРµР»СЏРµРј СЋСЂР» Рё СЃРѕС…СЂР°РЅСЏРµРј РµРµ
         char *urlStart = strstr(request, " ") + 1;
         memcpy(url, urlStart, strstr(urlStart, " ") - urlStart);
         url[strstr(urlStart, " ") - urlStart] = '\0';
     }
 
-    if (message) {//выделяем тело запроса и сохраняем его
+    if (message) {//РІС‹РґРµР»СЏРµРј С‚РµР»Рѕ Р·Р°РїСЂРѕСЃР° Рё СЃРѕС…СЂР°РЅСЏРµРј РµРіРѕ
         char *messageStart = strstr(request, "\r\n\r\n") + 4;
         memcpy(message, messageStart, strlen(request) - (messageStart - request));
         message[strlen(request) - (messageStart - request)] = '\0';
     }
 }
 
-void makeHttpResponse(const char *message, char *response) {//выдаем ответ клиенту на успешно выполненую операцию
+void makeHttpResponse(const char *message, char *response) {//РІС‹РґР°РµРј РѕС‚РІРµС‚ РєР»РёРµРЅС‚Сѓ РЅР° СѓСЃРїРµС€РЅРѕ РІС‹РїРѕР»РЅРµРЅСѓСЋ РѕРїРµСЂР°С†РёСЋ
     strcpy (response, "HTTP/1.1 200 OK\r\n");
     strcat (response, "Content-length: ");
     char contentLengthStr[CONTLENSTR_LEN];
@@ -72,15 +60,9 @@ void makeHttpResponse(const char *message, char *response) {//выдаем ответ клиен
     strcat (response, message);
 }
 
-http_server_t *http_server_create (pensioners_t *pensioners) {//создаем структуру сервер по списку пенсионеров
-    http_server_t *http_server = malloc(sizeof(http_server_t));
-    http_server->pensioners = pensioners;
-    return http_server;
-}
-
-void http_server_start(http_server_t *http_server) {//запускаем сервер
-    //инициализируем библиотеку винсок2
-    WSADATA wsa;//создаем сокет(структура для сохранения информации при инициализации сокета)
+void http_server_start() {//Р·Р°РїСѓСЃРєР°РµРј СЃРµСЂРІРµСЂ
+    //РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј Р±РёР±Р»РёРѕС‚РµРєСѓ РІРёРЅСЃРѕРє2
+    WSADATA wsa;//СЃРѕР·РґР°РµРј СЃРѕРєРµС‚(СЃС‚СЂСѓРєС‚СѓСЂР° РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё РїСЂРё РёРЅРёС†РёР°Р»РёР·Р°С†РёРё СЃРѕРєРµС‚Р°)
     if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0) {
         printf("WSA startup failed: %d\n", WSAGetLastError());
         exit(1);
@@ -97,15 +79,15 @@ void http_server_start(http_server_t *http_server) {//запускаем сервер
     memset(&serverSockAddr, 0, sizeof(struct sockaddr_in));
     serverSockAddr.sin_family = AF_INET;
     serverSockAddr.sin_addr.s_addr = INADDR_ANY;
-    serverSockAddr.sin_port = htons(PORT);//подвязываем порт к сокету(создали адрес для сокета)
+    serverSockAddr.sin_port = htons(PORT);//РїРѕРґРІСЏР·С‹РІР°РµРј РїРѕСЂС‚ Рє СЃРѕРєРµС‚Сѓ(СЃРѕР·РґР°Р»Рё Р°РґСЂРµСЃ РґР»СЏ СЃРѕРєРµС‚Р°)
 
-    if (bind(listenSocket, (struct sockaddr *)&serverSockAddr, sizeof(struct sockaddr_in)) == SOCKET_ERROR) {//связываем сокет с адресом)
+    if (bind(listenSocket, (struct sockaddr *)&serverSockAddr, sizeof(struct sockaddr_in)) == SOCKET_ERROR) {//СЃРІСЏР·С‹РІР°РµРј СЃРѕРєРµС‚ СЃ Р°РґСЂРµСЃРѕРј)
         printf("Bind socket error: %d\n", WSAGetLastError());
         WSACleanup();
         exit(1);
     }
 
-    if (listen(listenSocket, SOMAXCONN) == SOCKET_ERROR) {//ставим серверский сокет на прослушку
+    if (listen(listenSocket, SOMAXCONN) == SOCKET_ERROR) {//СЃС‚Р°РІРёРј СЃРµСЂРІРµСЂСЃРєРёР№ СЃРѕРєРµС‚ РЅР° РїСЂРѕСЃР»СѓС€РєСѓ
         printf("Listen socket error: %d\n", WSAGetLastError());
         closesocket(listenSocket);
         WSACleanup();
@@ -113,7 +95,7 @@ void http_server_start(http_server_t *http_server) {//запускаем сервер
     }
 
     while (1) {
-        SOCKET clientSocket = accept(listenSocket, NULL, NULL);//создаем клиентский сокет и присваеваем ему синхронно извлеченный первый ожидающий подключения запрос из очереди запросов
+        SOCKET clientSocket = accept(listenSocket, NULL, NULL);//СЃРѕР·РґР°РµРј РєР»РёРµРЅС‚СЃРєРёР№ СЃРѕРєРµС‚ Рё РїСЂРёСЃРІР°РµРІР°РµРј РµРјСѓ СЃРёРЅС…СЂРѕРЅРЅРѕ РёР·РІР»РµС‡РµРЅРЅС‹Р№ РїРµСЂРІС‹Р№ РѕР¶РёРґР°СЋС‰РёР№ РїРѕРґРєР»СЋС‡РµРЅРёСЏ Р·Р°РїСЂРѕСЃ РёР· РѕС‡РµСЂРµРґРё Р·Р°РїСЂРѕСЃРѕРІ
         if (clientSocket == INVALID_SOCKET) {
             printf("Client socket accept error: %d\n", WSAGetLastError());
             closesocket(listenSocket);
@@ -121,16 +103,16 @@ void http_server_start(http_server_t *http_server) {//запускаем сервер
             exit(1);
         }
 
-        char recvBuffer[BUFFER_LENGTH];//создаем буферы для отправки и получения информации
+        char recvBuffer[BUFFER_LENGTH];//СЃРѕР·РґР°РµРј Р±СѓС„РµСЂС‹ РґР»СЏ РѕС‚РїСЂР°РІРєРё Рё РїРѕР»СѓС‡РµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё
         char sendBuffer[BUFFER_LENGTH];
 
-        int recvTotalSize = 0;//размер полученой информации
-        int empty = 0; //делаем фдажок (пустой ли запрос клиента)
+        int recvTotalSize = 0;//СЂР°Р·РјРµСЂ РїРѕР»СѓС‡РµРЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё
+        int empty = 0;
         while (1) {
-            int recvSize = recv(clientSocket, recvBuffer + recvTotalSize, BUFFER_LENGTH - recvTotalSize, 0);//получаем информацию от клиента
+            int recvSize = recv(clientSocket, recvBuffer + recvTotalSize, BUFFER_LENGTH - recvTotalSize, 0);//РїРѕР»СѓС‡Р°РµРј РёРЅС„РѕСЂРјР°С†РёСЋ РѕС‚ РєР»РёРµРЅС‚Р°
             if (recvSize > 0) {
                 recvTotalSize += recvSize;
-                if (checkHttpRequestCompleteness(recvBuffer, recvTotalSize))//проверяем, правильно ли сервер получил информацию
+                if (checkHttpRequestCompleteness(recvBuffer, recvTotalSize))//РїСЂРѕРІРµСЂСЏРµРј, РїСЂР°РІРёР»СЊРЅРѕ Р»Рё СЃРµСЂРІРµСЂ РїРѕР»СѓС‡РёР» РёРЅС„РѕСЂРјР°С†РёСЋ
                     break;
             } else if (recvSize == 0) {
                 empty = 1;
@@ -152,21 +134,20 @@ void http_server_start(http_server_t *http_server) {//запускаем сервер
 
         recvBuffer[recvTotalSize] = '\0';
 
-        http_method_t http_method;
         char url[MAX_URL_LENGTH];
         char request[BUFFER_LENGTH];
         char response[BUFFER_LENGTH];
 
-        parseHttpRequest(recvBuffer, &http_method, url, request);//вытягиваем из хттп запроса метод, юрл и запрос в буфер
+        parseHttpRequest(recvBuffer, url, request);//РІС‹С‚СЏРіРёРІР°РµРј РёР· С…С‚С‚Рї Р·Р°РїСЂРѕСЃР° РјРµС‚РѕРґ, СЋСЂР» Рё Р·Р°РїСЂРѕСЃ РІ Р±СѓС„РµСЂ
         http_server_callback_t http_server_callback = callback;
-        if (!http_server_callback(http_server->pensioners, http_method, url, request, response))//сервер обрабатывает и дает ответ на запрос;ошибка,если такой запрос не прописан в программе
+        if (!http_server_callback(url, request, response))//СЃРµСЂРІРµСЂ РѕР±СЂР°Р±Р°С‚С‹РІР°РµС‚ Рё РґР°РµС‚ РѕС‚РІРµС‚ РЅР° Р·Р°РїСЂРѕСЃ;РѕС€РёР±РєР°,РµСЃР»Рё С‚Р°РєРѕР№ Р·Р°РїСЂРѕСЃ РЅРµ РїСЂРѕРїРёСЃР°РЅ РІ РїСЂРѕРіСЂР°РјРјРµ
             strcpy(sendBuffer, MESSAGE_404);
         else
-            makeHttpResponse(response, sendBuffer);//записываем ответ в буфер и отправляем, если все правильно
+            makeHttpResponse(response, sendBuffer);//Р·Р°РїРёСЃС‹РІР°РµРј РѕС‚РІРµС‚ РІ Р±СѓС„РµСЂ Рё РѕС‚РїСЂР°РІР»СЏРµРј, РµСЃР»Рё РІСЃРµ РїСЂР°РІРёР»СЊРЅРѕ
 
         int sendTotalSize = 0;
         while (1) {
-            int sendSize = send(clientSocket, sendBuffer + sendTotalSize, strlen(sendBuffer) - sendTotalSize, 0);//сервер отправляет ответ клиенту
+            int sendSize = send(clientSocket, sendBuffer + sendTotalSize, strlen(sendBuffer) - sendTotalSize, 0);//СЃРµСЂРІРµСЂ РѕС‚РїСЂР°РІР»СЏРµС‚ РѕС‚РІРµС‚ РєР»РёРµРЅС‚Сѓ
             if (sendSize == SOCKET_ERROR) {
                 printf("send error: %d\n", WSAGetLastError());
                 closesocket(clientSocket);
@@ -180,7 +161,7 @@ void http_server_start(http_server_t *http_server) {//запускаем сервер
                 break;
         }
 
-        if (shutdown(clientSocket, SD_SEND) == SOCKET_ERROR) {//если клиен получил все, что запросил, то закрываем соединение
+        if (shutdown(clientSocket, SD_SEND) == SOCKET_ERROR) {//РµСЃР»Рё РєР»РёРµРЅ РїРѕР»СѓС‡РёР» РІСЃРµ, С‡С‚Рѕ Р·Р°РїСЂРѕСЃРёР», С‚Рѕ Р·Р°РєСЂС‹РІР°РµРј СЃРѕРµРґРёРЅРµРЅРёРµ
             printf("shutdown client socket error: %d\n", WSAGetLastError());
             closesocket(clientSocket);
             closesocket(listenSocket);
@@ -195,7 +176,4 @@ void http_server_start(http_server_t *http_server) {//запускаем сервер
     WSACleanup();
 }
 
-void http_server_delete(http_server_t *http_server) {
-    free (http_server);
-}
 

@@ -90,7 +90,6 @@ int callback (pensioners_t *pensioners, http_method_t http_method, const char *u
 
                 cJSON_AddItemToArray (json, jsonPen);
                 pensioner_delete (pensioner);
-                cJSON_Delete(jsonPen);
             }
 
             strcpy (response, cJSON_Print(json));
