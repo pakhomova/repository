@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1464534070 source:c:\users\user\desktop\code\домашка\windows\nlp\list.c
+	"list.h"
+	<stdlib.h>
+	<string.h>
+
+1464529192 c:\users\user\desktop\code\домашка\windows\nlp\list.h
+	<stdlib.h>
+
+1464536004 source:c:\users\user\desktop\code\домашка\windows\nlp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"nlp.h"
+
+1464534656 source:c:\users\user\desktop\code\домашка\windows\nlp\nlp.c
+	"nlp.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1464533677 c:\users\user\desktop\code\домашка\windows\nlp\nlp.h
+	<stdlib.h>
+	<stdio.h>
+	"list.h"
+
