@@ -10,7 +10,7 @@
 
 #define MESSAGE_404 "HTTP/1.1 404 NOT FOUND\r\nContent-Length: 9\r\n\r\nNOT FOUND"
 #define CONTLENSTR_LEN 64
-#define PORT 8080
+#define PORT 8888
 
 struct http_server_s {
     pensioners_t *pensioners;
@@ -40,7 +40,7 @@ static int checkHttpRequestCompleteness (const char *request, int size) {//прове
     return 0;
 }
 
-static void parseHttpRequest(const char *request, http_method_t *http_method, char *url, char *message) {//парсим хттп запрос
+static void parseHttpRequest(char *request, http_method_t *http_method, char *url, char *urlParamStr, char *message) {//парсим хттп запрос
     if (http_method) {//определ€ем какой метод и сохран€ем его
         *http_method = http_method_get;
         if (strncmp(request, "POST", strlen("POST")) == 0)
@@ -53,6 +53,15 @@ static void parseHttpRequest(const char *request, http_method_t *http_method, ch
         char *urlStart = strstr(request, " ") + 1;
         memcpy(url, urlStart, strstr(urlStart, " ") - urlStart);
         url[strstr(urlStart, " ") - urlStart] = '\0';
+    }
+
+    if (urlParamStr && url) {//достаем параметры юрл
+        urlParamStr[0] = '\0';
+        char *questionMarkPos = strchr(url, '?');
+        if (questionMarkPos) {
+            strcpy(urlParamStr, questionMarkPos + 1);
+            *questionMarkPos = '\0';
+        }
     }
 
     if (message) {//выдел€ем тело запроса и сохран€ем его
@@ -154,12 +163,13 @@ void http_server_start(http_server_t *http_server) {//запускаем сервер
 
         http_method_t http_method;
         char url[MAX_URL_LENGTH];
+        char urlParamStr[MAX_URL_LENGTH];
         char request[BUFFER_LENGTH];
         char response[BUFFER_LENGTH];
 
-        parseHttpRequest(recvBuffer, &http_method, url, request);//выт€гиваем из хттп запроса метод, юрл и запрос в буфер
+        parseHttpRequest(recvBuffer, &http_method, url, urlParamStr, request);//выт€гиваем из хттп запроса метод, юрл и запрос в буфер
         http_server_callback_t http_server_callback = callback;
-        if (!http_server_callback(http_server->pensioners, http_method, url, request, response))//сервер обрабатывает и дает ответ на запрос;ошибка,если такой запрос не прописан в программе
+        if (!http_server_callback(http_server->pensioners, http_method, url, urlParamStr, request, response))//сервер обрабатывает и дает ответ на запрос;ошибка,если такой запрос не прописан в программе
             strcpy(sendBuffer, MESSAGE_404);
         else
             makeHttpResponse(response, sendBuffer);//записываем ответ в буфер и отправл€ем, если все правильно
@@ -198,4 +208,5 @@ void http_server_start(http_server_t *http_server) {//запускаем сервер
 void http_server_delete(http_server_t *http_server) {
     free (http_server);
 }
+
 

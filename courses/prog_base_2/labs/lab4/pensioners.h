@@ -15,10 +15,7 @@ typedef struct pensioner_s {
     int experience;
 } pensioner_t;
 
-typedef struct pensioners_s {
-    int number;
-    pensioner_t *pensionerArray;
-} pensioners_t;
+typedef struct pensioners_s pensioners_t;
 
 //pensioner
 

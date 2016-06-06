@@ -1,0 +1,104 @@
+# depslib dependency file v1.0
+1464810366 source:c:\users\user\desktop\code\домашка\windows\laba_05\cjson.c
+	<string.h>
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<float.h>
+	<limits.h>
+	<ctype.h>
+	"cJSON.h"
+
+1464810421 c:\users\user\desktop\code\домашка\windows\laba_05\cjson.h
+
+1465118372 source:c:\users\user\desktop\code\домашка\windows\laba_05\http_server.c
+	"http_server.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	<winsock2.h>
+	"web.h"
+
+1464823367 c:\users\user\desktop\code\домашка\windows\laba_05\http_server.h
+	"pensioners.h"
+
+1464815274 c:\users\user\desktop\code\домашка\windows\laba_05\pensioners.h
+	<time.h>
+
+1464815399 c:\users\user\desktop\code\домашка\windows\laba_05\web.h
+	"pensioners.h"
+	"http_server.h"
+
+1465118479 source:c:\users\user\desktop\code\домашка\windows\laba_05\main.c
+	"http_server.h"
+	"pensioners.h"
+	"web.h"
+
+1465118322 source:c:\users\user\desktop\code\домашка\windows\laba_05\pensioners.c
+	"pensioners.h"
+	<stdlib.h>
+	<string.h>
+	<sqlite3.h>
+	<stdio.h>
+
+1465118240 source:c:\users\user\desktop\code\домашка\windows\laba_05\web.c
+	"web.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"cJSON.h"
+
+1450774966 c:\users\user\downloads\sqlite-amalgamation-201512211522\sqlite3.h
+	<stdarg.h>
+
+1464810366 source:c:\github\repository\courses\prog_base_2\labs\lab5\cjson.c
+	<string.h>
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<float.h>
+	<limits.h>
+	<ctype.h>
+	"cJSON.h"
+
+1464810421 c:\github\repository\courses\prog_base_2\labs\lab5\cjson.h
+
+1465118372 source:c:\github\repository\courses\prog_base_2\labs\lab5\http_server.c
+	"http_server.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	<winsock2.h>
+	"web.h"
+
+1464823367 c:\github\repository\courses\prog_base_2\labs\lab5\http_server.h
+	"pensioners.h"
+
+1464815274 c:\github\repository\courses\prog_base_2\labs\lab5\pensioners.h
+	<time.h>
+
+1464815399 c:\github\repository\courses\prog_base_2\labs\lab5\web.h
+	"pensioners.h"
+	"http_server.h"
+
+1465118479 source:c:\github\repository\courses\prog_base_2\labs\lab5\main.c
+	"http_server.h"
+	"pensioners.h"
+	"web.h"
+
+1465118322 source:c:\github\repository\courses\prog_base_2\labs\lab5\pensioners.c
+	"pensioners.h"
+	<stdlib.h>
+	<string.h>
+	<sqlite3.h>
+	<stdio.h>
+
+1465118240 source:c:\github\repository\courses\prog_base_2\labs\lab5\web.c
+	"web.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"cJSON.h"
+

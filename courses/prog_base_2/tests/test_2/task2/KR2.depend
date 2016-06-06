@@ -67,11 +67,92 @@
 	"http_server.h"
 	"web.h"
 
-1464426079 source:c:\github\repository\courses\prog_base_2\tests\test_2\task2\web.c
+1464440906 source:c:\github\repository\courses\prog_base_2\tests\test_2\task2\web.c
 	"web.h"
 	<stdlib.h>
 	<string.h>
 	<stdio.h>
 	<winsock2.h>
 	"cJSON.h"
+	"../../../tasks/database/database/db_manager.h"
+	"../../../tasks/database/database/pensioner.h"
+
+1464439670 source:c:\github\repository\courses\prog_base_2\tasks\database\database\db_manager.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"sqlite3.h"
+	"db_manager.h"
+	"pensioner.h"
+
+1450774966 c:\github\repository\courses\prog_base_2\tasks\database\database\sqlite3.h
+	<stdarg.h>
+
+1464439752 c:\github\repository\courses\prog_base_2\tasks\database\database\db_manager.h
+	"sqlite3.h"
+	"pensioner.h"
+
+1461697788 c:\github\repository\courses\prog_base_2\tasks\database\database\pensioner.h
+
+1461697777 source:c:\github\repository\courses\prog_base_2\tasks\database\database\pensioner.c
+	<stdlib.h>
+	<stdio.h>
+	"pensioner.h"
+
+1450774966 source:c:\github\repository\courses\prog_base_2\tasks\database\database\sqlite3.c
+	<vxWorks.h>
+	<pthread.h>
+	"mingw.h"
+	"_mingw.h"
+	<stdarg.h>
+	"config.h"
+	<stdint.h>
+	<inttypes.h>
+	<intrin.h>
+	<cmnintrin.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<TargetConditionals.h>
+	<ctype.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	"windows.h"
+	<sys/cygwin.h>
+	<errno.h>
+	<process.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/ioctl.h>
+	<sys/file.h>
+	<sys/param.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/mount.h>
+	<utime.h>
+	<sys/dcmd_blk.h>
+	<sys/statvfs.h>
+	<dlfcn.h>
+	<tcl.h>
+	"sqlite3rtree.h"
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+	<ctype.h>
+	<math.h>
 
