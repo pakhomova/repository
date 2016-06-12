@@ -3,7 +3,7 @@
 
 #include <QGraphicsPixmapItem>
 
-class MapPixel: public QGraphicsPixmapItem{
+class MapPixel: public QGraphicsPixmapItem{ //класс предоставляет элемент растрового изображения, который вы можете добавить
 
     public:
         MapPixel(int i ,int j);
