@@ -22,7 +22,7 @@ const int acceleration = 4;
 
 void Shot::move(){
 
-    QList<QGraphicsItem*> colliding_items = collidingItems();
+    QList<QGraphicsItem*> colliding_items = collidingItems(); //предметы, с которыми произошло столкновение
 
     for(int i = 0; i < colliding_items.size(); i++){
         if((typeid(*(colliding_items[i])) == typeid(QGraphicsTextItem)) || (typeid(*(colliding_items[i])) == typeid(QGraphicsRectItem)) || (typeid(*(colliding_items[i])) == typeid(QGraphicsPixmapItem)));

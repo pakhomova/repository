@@ -5,9 +5,9 @@
 
 const double delta = 0.05;
 const double g = 9.81;
-const int acceleration = 4;
+const int acceleration = 4; //ускорение
 
-void Palm::move(){
+void Palm::move(){ //падение пальмы в начале игры, пока не встретит землю
     if(collidingItems().size() == 0){
         setPos(x(), y() + speed_y*delta*acceleration + g*delta*delta*acceleration/2);
     }
