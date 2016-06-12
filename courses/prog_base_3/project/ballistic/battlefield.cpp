@@ -2,7 +2,7 @@
 #include "battlefield.h"
 #include "mappixel.h"
 
-Battlefield::Battlefield(){
+Battlefield::Battlefield(){ //рассчитываем поле боя
     srand(time(NULL));
 
     int height = HeightScreen/7 + HeightScreen/2 + rand() % (HeightScreen/4);
@@ -20,7 +20,7 @@ Battlefield::Battlefield(){
     }
 }
 
-void Battlefield::addBattlefieldItemToScene(QGraphicsScene* scene){
+void Battlefield::addBattlefieldItemToScene(QGraphicsScene* scene){ //заполняем нужную часть текстурой
     for(int i = 0; i < HeightScreen; i++){
             for(int j = 0; j < WidthScreen; j++){
                 if(Matrixfield[i][j] == 1){
