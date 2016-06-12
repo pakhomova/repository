@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>background3.png</file>
+        <file>banano_30x17.png</file>
+        <file>blackskingorilla_35x37.png</file>
+        <file>gorillaskinwhite_35x44.png</file>
+        <file>Lemon_30x24.png</file>
+        <file>orange_25x25.png</file>
+        <file>palm2_300x300.png</file>
+        <file>texture3_8x8.png</file>
+        <file>MenuBackground.png</file>
+        <file>NewGame.png</file>
+        <file>NewGameBlink.png</file>
+        <file>Quit.png</file>
+        <file>QuitBlink.png</file>
+        <file>Scores.png</file>
+        <file>ScoresBlink.png</file>
+        <file>GameOverMenu.png</file>
+    </qresource>
+</RCC>
